@@ -1,0 +1,10 @@
+---
+Name: SilverstripeALLinOne
+---
+SilverStripe\CMS\Model\SiteTree:
+  extensions:
+    - SilverstripeALLinOne\Extensions\CustomMainPage
+
+Silverstripe\SiteConfig\SiteConfig:
+  extensions:
+    - CustomALLinOneConfig
