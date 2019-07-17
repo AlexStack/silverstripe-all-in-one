@@ -17,8 +17,8 @@
         "silverstripe/framework": "~4.0",
         "silverstripe/vendor-plugin": "^1.0",
         "silverstripe/recipe-plugin": "^1.2",
-        "silverstripe/recipe-cms": "^4.3",
-        "silverstripe/restfulserver": "^2.1",        
+        "silverstripe/recipe-cms": "^4.0",
+        "silverstripe/restfulserver": "^1.0",        
         "alexstack/silverstripe-custom-bootstrap4-theme": "^1.0",
         "alexstack/SilverStripe-Custom-Carousel-Slider": "^1.0",
         "alexstack/silverstripe-custom-page-with-contact-us-form": "^1.2"
