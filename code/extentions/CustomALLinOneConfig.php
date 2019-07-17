@@ -86,12 +86,20 @@ class CustomALLinOneConfig extends DataExtension
 
             $needUpdateThemeYml = false;
 
+
             // Update the first theme not contain $
-            for($i=0; $i< count($themeData['SilverStripe\View\SSViewer']['themes']); $i++ )
-            if ( strpos($themeData['SilverStripe\View\SSViewer']['themes'][$i],'$') === false && $themeData['SilverStripe\View\SSViewer']['themes'][$i] != trim($_POST['CustomThemeName']) ){
-                $themeData['SilverStripe\View\SSViewer']['themes'][$i] = trim($_POST['CustomThemeName']);
+            for($i=0; $i< count($themeData['SilverStripe\View\SSViewer']['themes']); $i++ ){
+                if ( strpos($themeData['SilverStripe\View\SSViewer']['themes'][$i],'$') === false && $themeData['SilverStripe\View\SSViewer']['themes'][$i] != trim($_POST['CustomThemeName']) ){
+                    $themeData['SilverStripe\View\SSViewer']['themes'][$i] = trim($_POST['CustomThemeName']);
+                    $needUpdateThemeYml = true;
+                    break;
+                }
+            }
+            // Newly installed ss site with empty template
+            if ( $needUpdateThemeYml == false && count($themeData['SilverStripe\View\SSViewer']['themes']) == 2 && $themeData['SilverStripe\View\SSViewer']['themes'][0] == '$public'  && $themeData['SilverStripe\View\SSViewer']['themes'][1] == '$default' ){
+                $themeData['SilverStripe\View\SSViewer']['themes'][1] = trim($_POST['CustomThemeName']);
+                $themeData['SilverStripe\View\SSViewer']['themes'][2] = '$default';
                 $needUpdateThemeYml = true;
-                break;
             }
 
             if ( $needUpdateThemeYml ){

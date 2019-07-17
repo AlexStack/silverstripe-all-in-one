@@ -14,6 +14,7 @@ composer require alexstack/silverstripe-all-in-one
 ```
 
 ## Global settings in the admin
+- Rebuild the database by /dev/build?flush=1 then visit the /admin/?flush=1
 !['img'](docs/images/SilverStripe-Settings-001.png)
 !['img'](docs/images/SilverStripe-Settings-002.png)
 
